@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:meeting_time_app/slots_page.dart';
 import 'package:meeting_time_app/utils/custom_button.dart';
+import 'package:meeting_time_app/utils/custom_colors.dart';
 
 class OnBoardingPage extends StatelessWidget {
   const OnBoardingPage({Key? key}) : super(key: key);
@@ -7,7 +9,7 @@ class OnBoardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: white,
       body: Padding(
         padding: const EdgeInsets.fromLTRB(20, 30, 20, 60),
         child: Column(
@@ -30,7 +32,15 @@ class OnBoardingPage extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                CustomButton(onPressed: () {}, text: 'SLOTS'),
+                CustomButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => const SlotsPage(),
+                        ),
+                      );
+                    },
+                    text: 'SLOTS'),
                 CustomButton(onPressed: () {}, text: 'HOME'),
               ],
             ),
